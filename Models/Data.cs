@@ -27,7 +27,7 @@ namespace Bartolini.Liam._4H.DataGiorno.Models
             get => _mese;
 
             // se non è compreso tra 1 e 31 imposto 1
-            set => _mese = (value >= 1&& value <= 12) ? value : 1;
+            set => _mese = (value >= 1 && value <= 12) ? value : 1;
         }
         
         public int Anno
@@ -55,14 +55,9 @@ namespace Bartolini.Liam._4H.DataGiorno.Models
         }
 
         // Controllo solo che il numero di giorni sia coerente con il mese
-        public string Val()
-        {
-            // Utilizzo le liste per poter usare il metodo .Exists per la ricerca dei dati
-            if (Mese > 0 && Mese <= 12)
-                return giorniMesi.Exists(x => Giorno <= giorniMesi[Mese - 1]) ? "Corretta" : "Sbagliata";
-            else
-                return "Sbagliata";
-        }
+        // Utilizzo le liste per poter usare il metodo .Exists per la ricerca dei dati
+
+        public string Val() => giorniMesi.Exists(x => Giorno <= giorniMesi[Mese - 1]) ? "Corretta" : "Sbagliata";
 
         public Data(string data)
         {
@@ -85,6 +80,5 @@ namespace Bartolini.Liam._4H.DataGiorno.Models
         {
 
         }
-
     }
 }

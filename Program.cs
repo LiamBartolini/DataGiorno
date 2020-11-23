@@ -9,7 +9,7 @@ namespace Bartolini.Liam._4H.DataGiorno
         {
             try
             {
-                Data data = new Data("/, 01, 2003");
+                Data data = new Data("29, 01, 2003");
                 Console.WriteLine("Data originale: ");
                 Console.WriteLine(data.Out());
 
